@@ -1,4 +1,3 @@
-// SOLUTION 1: Use require() for local SVG files
 import React, { useState, useEffect } from 'react';
 import {
   View,
@@ -13,7 +12,7 @@ import {
 const { width, height } = Dimensions.get('window');
 
 const SplashScreen = ({ onSplashEnd }) => {
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(10);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,7 +26,7 @@ const SplashScreen = ({ onSplashEnd }) => {
         }
         return prevTimer - 1;
       });
-    }, 10000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [onSplashEnd]);

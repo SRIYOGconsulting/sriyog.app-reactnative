@@ -8,15 +8,15 @@ import {
   Image,
 } from 'react-native';
 
-const OnboardingScreenH = () => {
-  const handleHome = () => {
-    // Handle home button press
-    console.log('Home pressed');
+const OnboardingScreen = () => {
+  const handleNext = () => {
+    // Handle next button press
+    console.log('Next pressed');
   };
 
-  const handleStartExploring = () => {
-    // Handle start exploring button press
-    console.log('Start Exploring pressed');
+  const handleSkip = () => {
+    // Handle skip button press
+    console.log('Skip pressed');
   };
 
   return (
@@ -25,7 +25,7 @@ const OnboardingScreenH = () => {
         {/* Profile Image */}
         <View style={styles.profileContainer}>
           <Image
-            source={require('./assets/person_images/1.png')} // Replace with your image path
+            source={require('./assets/person_images/2.png')} // Replace with your image path
             style={styles.profileImage}
             resizeMode="cover"
           />
@@ -33,28 +33,28 @@ const OnboardingScreenH = () => {
 
         {/* Definition Text */}
         <Text style={styles.definitionText}>
-        The latest practice of using digital technology to solve social problems like unemployment through digital connectivity is SRIYOG, which has been operating in a start-up model.
+          Digitalization is the use of digital technologies to change business processes and projects—such as skilling employees to use new software platforms designed to help launch products faster.
         </Text>
 
         {/* Name Section */}
         <View style={styles.nameSection}>
-          <Text style={styles.honorableText}>Founder</Text>
-          <Text style={styles.nameText}>PRACAS Upreti</Text>
+          <Text style={styles.honorableText}>Honorable</Text>
+          <Text style={styles.nameText}>Bhim Parajuli</Text>
         </View>
 
         {/* Navigation Buttons */}
         <View style={styles.navigationContainer}>
-          <TouchableOpacity style={styles.homeButton} onPress={handleHome}>
+          <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
+            <Text style={styles.nextButtonText}>Next</Text>
             <Image
-              source={require('./assets/icons/home.png')} 
-              style={styles.homeIcon}
+              source={require('./assets/icons/right-arrow.png')} 
+              style={styles.arrowIcon}
               resizeMode="contain"
             />
-            <Text style={styles.homeButtonText}>Home</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.startExploringButton} onPress={handleStartExploring}>
-            <Text style={styles.startExploringButtonText}>Start Exploring</Text>
+          <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+            <Text style={styles.skipButtonText}>Skip</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
-  homeButton: {
+  nextButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -127,27 +127,27 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     minWidth: 120,
   },
-  homeIcon: {
-    width: 20,
-    height: 20,
-    tintColor: '#801414',
-    marginRight: 15,
-  },
-  homeButtonText: {
+  nextButtonText: {
     fontSize: 20,
     color: '#801414',
     fontWeight: '500',
+    marginRight: 15,
   },
-  startExploringButton: {
+  arrowIcon: {
+    width: 20,
+    height: 20,
+    tintColor: '#801414',
+  },
+  skipButton: {
     backgroundColor: 'transparent',
     paddingVertical: 12,
     paddingHorizontal: 20,
   },
-  startExploringButtonText: {
+  skipButtonText: {
     fontSize: 18,
     color: '#666666',
     fontWeight: '400',
   },
 });
 
-export default OnboardingScreenH;
+export default OnboardingScreen;
